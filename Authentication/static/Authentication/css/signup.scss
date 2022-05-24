@@ -1,0 +1,84 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: gray;
+}
+
+.signup-con {
+  display: block;
+  position: relative;
+  margin-inline: auto;
+  width: 21.8rem;
+  height: fit-content;
+  background-color: black;
+  color: white;
+  padding: .625rem;
+  border: 4px dashed grey;
+  border-radius: .62rem;
+  font-family: "URW Gothic";
+
+  h1 {
+    margin-block: 10px;
+  }
+
+  form {
+    width: 100%;
+    margin-inline: auto;
+
+    .lgbtn {
+      position: relative;
+      padding: .6rem .8rem;
+      margin-inline: auto;
+      border: 1px solid dodgerblue;
+      border-radius: .68rem;
+      background-color: transparent;
+      color: dodgerblue;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &:hover {
+        color: black;
+        background-color: dodgerblue;
+        border-color: black;
+      }
+    }
+
+    .input-group {
+      height: 70px;
+      margin-block: 10px;
+
+      & > * {
+        display: block;
+      }
+
+      label {
+        text-align: center;
+        margin-block: 10px;
+      }
+
+      input[type='text'], input[type='password'] , input[type='email']{
+        border: 2px solid grey;
+        border-radius: 10px;
+        padding-inline: 10px;
+        height: 30px;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+
+        }
+      }
+
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}

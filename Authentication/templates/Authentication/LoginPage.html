@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link href="{% static 'Authentication/css/login.css' %}" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+<div>
+    <div class="login-con">
+        <h1 class="text-center">Login Now</h1>
+        <hr>
+        <form method="post">
+        {% csrf_token %}
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <input type="submit" class="lgbtn" value="Login">
+            </div>
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="text-center", style="margin-block:5px">{{ message}}</p>
+                {% endfor %}
+            {% endif %}
+            <p class="text-center"> Don't have an account ?. <a href="{% url 'signup' %}" style="color: dodgerblue">Sign Up Here</a></p>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
