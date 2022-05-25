@@ -13,7 +13,7 @@ body {
 .signup-con {
   display: block;
   position: relative;
-  margin-inline: auto;
+  margin: 0 auto;
   width: 21.8rem;
   height: fit-content;
   background-color: black;
@@ -24,7 +24,8 @@ body {
   font-family: "URW Gothic";
 
   h1 {
-    margin-block: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   form {
@@ -34,7 +35,7 @@ body {
     .lgbtn {
       position: relative;
       padding: .6rem .8rem;
-      margin-inline: auto;
+      margin: 0 auto;
       border: 1px solid dodgerblue;
       border-radius: .68rem;
       background-color: transparent;
@@ -51,7 +52,8 @@ body {
 
     .input-group {
       height: 70px;
-      margin-block: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
 
       & > * {
         display: block;
@@ -59,10 +61,11 @@ body {
 
       label {
         text-align: center;
-        margin-block: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
       }
 
-      input[type='text'], input[type='password'] , input[type='email']{
+      input[type='text'], input[type='password'], input[type='email'] {
         border: 2px solid grey;
         border-radius: 10px;
         padding-inline: 10px;

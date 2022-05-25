@@ -13,7 +13,7 @@ body {
 .signup-con {
   display: block;
   position: relative;
-  margin-inline: auto;
+  margin: 0 auto;
   width: 21.8rem;
   height: fit-content;
   background-color: black;
@@ -24,7 +24,8 @@ body {
   font-family: "URW Gothic";
 }
 .signup-con h1 {
-  margin-block: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .signup-con form {
   width: 100%;
@@ -33,7 +34,7 @@ body {
 .signup-con form .lgbtn {
   position: relative;
   padding: 0.6rem 0.8rem;
-  margin-inline: auto;
+  margin: 0 auto;
   border: 1px solid dodgerblue;
   border-radius: 0.68rem;
   background-color: transparent;
@@ -48,14 +49,16 @@ body {
 }
 .signup-con form .input-group {
   height: 70px;
-  margin-block: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .signup-con form .input-group > * {
   display: block;
 }
 .signup-con form .input-group label {
   text-align: center;
-  margin-block: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .signup-con form .input-group input[type=text], .signup-con form .input-group input[type=password], .signup-con form .input-group input[type=email] {
   border: 2px solid grey;
