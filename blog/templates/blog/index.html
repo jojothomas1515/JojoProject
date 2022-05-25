@@ -7,6 +7,11 @@
 {% endblock %}
 
 {% block content %}
+  {% if is_admin %}
+      <div style="background:rgba(0,0,0,.6)">
+          <a href="admin/" class="btn" style="margin-inline:auto; color:white;">admin panel</a>
+      </div>
+  {% endif %}
     <section class="intro" style="background-image: url('{% static "blog/images/yikr9jXET.jpg" %}')">
         <div class="container">
             <h1>
