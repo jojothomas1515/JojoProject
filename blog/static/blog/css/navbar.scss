@@ -16,9 +16,10 @@
   background-color: darkslategrey;
   padding: 10px;
   color: white;
+  z-index: 1000;
 
-  h1{
-    span{
+  h1 {
+    span {
       padding: 5px;
       border-radius: 10px;
       background-color: white;
@@ -32,12 +33,16 @@
     justify-content: space-between;
     align-items: center;
 
+
     .nav-items {
       display: flex;
       gap: 20px;
+        z-index: 1000;
+
     }
 
     .btn {
+      all: unset;
       padding: 5px;
       border: 1px solid white;
       color: white;
@@ -69,6 +74,10 @@
 }
 
 @media (max-width: 887px) {
+  .navbar .navbar-con h1 {
+    text-align: center;
+  }
+
   .bars {
     display: block;
 
@@ -94,9 +103,11 @@
     transition: all 250ms ease-in-out;
 
     .btn {
+      all: unset;
       color: white;
       display: block;
       padding: 20px;
+
       text-align: center;
       text-decoration: none;
       border: none;

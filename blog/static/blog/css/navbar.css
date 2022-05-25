@@ -16,6 +16,7 @@
   background-color: darkslategrey;
   padding: 10px;
   color: white;
+  z-index: 1000;
 }
 .navbar h1 span {
   padding: 5px;
@@ -31,8 +32,10 @@
 .navbar .navbar-con .nav-items {
   display: flex;
   gap: 20px;
+  z-index: 1000;
 }
 .navbar .navbar-con .btn {
+  all: unset;
   padding: 5px;
   border: 1px solid white;
   color: white;
@@ -55,6 +58,10 @@
 }
 
 @media (max-width: 887px) {
+  .navbar .navbar-con h1 {
+    text-align: center;
+  }
+
   .bars {
     display: block;
   }
@@ -79,6 +86,7 @@
     transition: all 250ms ease-in-out;
   }
   .navbar .navbar-con .nav-items .btn {
+    all: unset;
     color: white;
     display: block;
     padding: 20px;

@@ -1,0 +1,58 @@
+section.intro {
+  height: 30rem;
+  color: white;
+  display: grid;
+  align-items: center;
+  background-size: 100%;
+  background-position-y: center;
+}
+section.intro > div {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+section.intro > div > * {
+  position: relative;
+  top: 50%;
+}
+section.intro > div a {
+  margin-block: 1rem;
+  margin-inline: auto;
+}
+section.feed {
+  background-color: wheat;
+}
+section.feed .feed-con {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, max-content));
+  grid-gap: 16px;
+  justify-content: center;
+  padding: 20px;
+}
+section.feed a {
+  all: unset;
+  max-width: 400px;
+  margin-inline: auto;
+  cursor: pointer;
+}
+section.feed .card {
+  background-color: white;
+  box-shadow: 0 4px 10px 1px black;
+  max-width: 400px;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+section.feed .card h1 {
+  margin-block: 5px;
+}
+section.feed .card p {
+  color: rgba(0, 0, 0, 0.8);
+}
+section.feed .card img {
+  border-radius: 0.4rem;
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=index.css.map */
