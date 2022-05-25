@@ -25,7 +25,7 @@ section.feed {
 }
 section.feed .feed-con {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, max-content));
+  grid-template-columns: repeat(auto-fit, minmax(410px, max-content));
   grid-gap: 16px;
   justify-content: center;
   padding: 20px;
@@ -53,6 +53,19 @@ section.feed .card p {
 section.feed .card img {
   border-radius: 0.4rem;
   max-width: 100%;
+}
+
+footer {
+  background-color: darkslategrey;
+  padding: 1rem;
+}
+footer > div {
+  display: block;
+  color: whitesmoke;
+  text-align: center;
+}
+footer > div > * {
+  margin-block: 10px;
 }
 
 /*# sourceMappingURL=index.css.map */

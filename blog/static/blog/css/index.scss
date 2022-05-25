@@ -30,7 +30,7 @@ section {
     background-color: wheat;
     .feed-con{
       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(210px, max-content));
+       grid-template-columns: repeat(auto-fit, minmax(410px, max-content));
        grid-gap: 16px;
        justify-content: center;
       padding: 20px;
@@ -65,6 +65,19 @@ section {
         max-width: 100%;
       }
 
+    }
+  }
+}
+
+footer{
+      background-color: darkslategrey;
+  padding: 1rem;
+  >div{
+    display: block;
+    color: whitesmoke;
+    text-align: center;
+    > *{
+      margin-block: 10px;
     }
   }
 }

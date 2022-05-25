@@ -1,6 +1,6 @@
 import django.contrib.auth.forms
 from django.shortcuts import redirect, render
-from django.contrib.messages import error
+from django.contrib.messages import error, info
 
 from django.contrib.auth import login, logout, authenticate
 
@@ -32,11 +32,12 @@ def signupPage(request):
         if form.is_valid():
             # username,firstname,lastname,email, password1, password2 = form.cleaned_data.get('username'), form.cleaned_data.get('firstname') ,form.cleaned_data.get('lastname'), form.cleaned_data.get('email'), form.cleaned_data.get('password1'),form.cleaned_data.get('password2')
             form.save()
+            info(request,"User created successfully, Login Now")
+            return redirect('login')
         else:
             error(request, form.errors.as_text())
-
-
-
-
-
     return render(request, 'Authentication/SignupPage.html')
+
+def Logout(request):
+    logout(request)
+    return redirect('login')

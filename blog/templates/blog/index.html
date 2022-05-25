@@ -40,21 +40,31 @@
                     </div>
                 </div>
             </a>
-            <a href="#">
+
+
+            {% for post in posts %}
+              <a href="#">
                 <div class="card">
-                    <h4 class="card-header">Header</h4>
+                    <h4 class="card-header">{{ post.title }}</h4>
                     <div class="">
-                        <img src="{% static "blog/images/cool.jpg" %}" alt="no picture">
-                        <p class="">this is a summary</p>
-                        <sub class="">Forex</sub>
+                        <img src="{% if post.logo %}{{ post.logo.url }}{% else %} {% static 'blog/images/cool.jpg' %}{% endif %}" alt="no picture">
+                        <p class="">{{ post.summary }}</p>
+
+                        <sub class="">{{ post.pub_date }} {{ post.pub_time }}</sub>
                     </div>
                 </div>
             </a>
+            {% endfor %}
         </div>
     </section>
-    <footer>
-    <div class="container">
 
-    </div>
+    <footer>
+        <div class="container">
+            <h1>
+                Jojo's <span>Blog</span>
+            </h1>
+            <p>copyright&copy;2022</p>
+
+        </div>
     </footer>
 {% endblock %}
