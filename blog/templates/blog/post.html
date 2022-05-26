@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% if is_admin %}
+        <div style="background:rgba(0,0,0,.6)">
+            <a href="admin/" class="btn" style="margin-inline:auto; color:white;">admin panel</a>
+        </div>
+    {% endif %}
+    {% if post %}
+        {{ post }}
+    {% endif %}
+
+{% endblock %}
