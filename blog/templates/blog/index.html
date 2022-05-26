@@ -9,7 +9,7 @@
 {% block content %}
   {% if is_admin %}
       <div style="background:rgba(0,0,0,.6)">
-          <a href="admin/" class="btn" style="margin-inline:auto; color:white;">admin panel</a>
+          <a href="/admin/" class="btn" style="margin-inline:auto; color:white;">admin panel</a>
       </div>
   {% endif %}
     <section class="intro" >
@@ -48,7 +48,7 @@
 
 
             {% for post in posts %}
-              <a href="#">
+              <a href="{% url "post" post.id %}">
                 <div class="card">
                     <h4 class="card-header">{{ post.title }}</h4>
                     <div class="">
@@ -63,13 +63,4 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <h1>
-                Jojo's <span>Blog</span>
-            </h1>
-            <p>copyright&copy;2022</p>
-
-        </div>
-    </footer>
 {% endblock %}

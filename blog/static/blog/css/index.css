@@ -60,18 +60,4 @@ section.feed .card img {
   max-width: 100%;
 }
 
-footer {
-  background-color: darkslategrey;
-  padding: 1rem;
-}
-footer > div {
-  display: block;
-  color: whitesmoke;
-  text-align: center;
-}
-footer > div > * {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 /*# sourceMappingURL=index.css.map */
