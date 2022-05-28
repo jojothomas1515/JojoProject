@@ -1,3 +1,11 @@
+import {initializeApp} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+import {
+    getDownloadURL,
+    getStorage,
+    ref,
+    uploadBytes
+} from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-storage.js'
+
 tinyMCE.init({
     mode: "textareas",
     plugins: "fullscreen image",
@@ -7,16 +15,56 @@ tinyMCE.init({
     width: "600px",
 
     images_upload_handler: (blobInfo, success, failure) => {
-        const formData = new FormData()
-        formData.append('image', blobInfo.blob(), blobInfo.filename());
-        console.log(blobInfo.blob())
-        fetch(/upload/, {
-            method: 'POST', body: formData, headers: {'X-CSRFToken': document.cookie.split('=')[1]}
-        }).then(res => res => {
-            if (res.ok) {
-                success(res.data)
-            }
-        }).catch(failure('try again'))
+        upload_image(blobInfo, success, failure)
     }
 });
+
+
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyACnLRz2EmPraAFfi-iq2hopnzg9FoF74g",
+
+    authDomain: "djangoblog-fb9c4.firebaseapp.com",
+
+    projectId: "djangoblog-fb9c4",
+
+    storageBucket: "djangoblog-fb9c4.appspot.com",
+
+    messagingSenderId: "109437689292",
+
+    appId: "1:109437689292:web:d40699b139d1062a3e1169"
+
+};
+
+
+const firebaseApp = initializeApp(firebaseConfig);
+
+function upload_image(blobFile, success, failure) {
+    const metadata = {
+        contentType: 'image/jpeg'
+    };
+
+    const storage = getStorage(firebaseApp);
+    const storageRef = ref(storage);
+    const imageRef = ref(storageRef, 'images')
+    const thisRef = ref(imageRef, blobFile.filename())
+    uploadBytes(thisRef, blobFile.blob(), metadata).then((snapshot) => {
+
+        getDownloadURL(thisRef).then(url => success(url))
+
+    }).catch(e => {
+        console.log(e);
+        failure('failed')
+    })
+
+}
+
+
+
+
+
+
 
