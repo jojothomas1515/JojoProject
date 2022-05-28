@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% if is_admin %}
+        <div style="background:rgba(0,0,0,.6)">
+            <a href="/admin/" class="btn" style="margin-inline:auto; color:white;">admin panel</a>
+        </div>
+    {% endif %}
+    <div style="min-height: 80vh; padding:1rem 4rem">
+    {% if post %}
+        {{ post.Post|safe}}
+    {% endif %}
+    </div>
+
+{% endblock %}
