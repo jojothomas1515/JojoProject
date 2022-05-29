@@ -124,17 +124,28 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+from google.oauth2 import service_account
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.path.join(BASE_DIR, 'cert.json')
+)
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static'), os.path.join(BASE_DIR)]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-MEDIA_ROOT = []
-MEDIA_URL = '/media/'
+# DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+# GS_BUCKET_NAME = 'djangoblog-fb9c4.appspot.com'
+#
+# STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+#
+#
+#
+# STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static')]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/static/'
+#
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded_files')
+# MEDIA_URL = '/media/'
 
 
 
