@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
+from google.oauth2 import service_account
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -124,7 +126,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-from google.oauth2 import service_account
 
 
 # Static files (CSS, JavaScript, Images)
@@ -133,19 +134,19 @@ GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
     os.path.join(BASE_DIR, 'cert.json')
 )
 
-# DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-# GS_BUCKET_NAME = 'djangoblog-fb9c4.appspot.com'
-#
-# STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-#
-#
-#
-# STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static')]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATIC_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/static/'
-#
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded_files')
-# MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+GS_BUCKET_NAME = 'djangoblog-fb9c4.appspot.com'
+
+STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+
+
+
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded_files')
+MEDIA_URL = '/media/'
 
 
 
