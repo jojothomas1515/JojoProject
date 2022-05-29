@@ -5,7 +5,7 @@ from tinymce import models as tmodel
 
 class blogpost(models.Model):
     title = models.CharField(max_length=200 )
-    Post = tmodel.HTMLField()
+    Post = models.TextField()
     logo = models.ImageField('head image', null=True, blank=True)
     summary = models.CharField(max_length=30, null=True, blank=True)
     pub_date = models.DateField('Date Published', auto_now=True)
