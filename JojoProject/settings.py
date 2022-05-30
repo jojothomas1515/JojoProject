@@ -74,21 +74,34 @@ WSGI_APPLICATION = 'JojoProject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+if DEBUG == True:
+    DATABASES = {
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+
     }
-    # 'default':{
-    #     'ENGINE':'django.db.backends.postgresql_psycopg2',
-    #     'NAME':"mydjangoblog",
-    #     'USER':'django',
-    #     'PASSWORD':'speed123',
-    #     'HOST':'127.0.0.1',
-    #
-    # }
-}
+elif DEBUG == False:
+    DATABASES = {
+
+        'default': {
+
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+            'NAME': 'deassvs5olquln',
+
+            'USER': 'snmqoznbbnywsz',
+
+            'PASSWORD': 'd45a73532465dbf4f1bc9b59969e83f800a911c2bdacf81b46a5594575e80c0e',
+
+            'HOST': 'ec2-44-196-174-238.compute-1.amazonaws.com',
+
+            'PORT': '5432',
+
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
