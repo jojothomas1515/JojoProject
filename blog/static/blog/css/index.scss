@@ -53,12 +53,16 @@ section {
       background-color: white;
       box-shadow: 0 4px 10px 1px black;
       width: 400px;
-      height: 400px;
+      height: 100%;
       border-radius: 10px;
       padding: 1rem;
       text-align: center;
       &:hover{
         transform:scale(101%);
+      }
+      .card-img-con{
+        width: calc(100% - 1rem);
+        height: 200px;
       }
       h1 {
         margin-top: 5px;
@@ -67,13 +71,17 @@ section {
 
       p {
         color: rgba(0, 0, 0, 0.8);
+        word-wrap: anywhere;
       }
 
       img {
         border-radius: .4rem;
         max-width: 100%;
-        aspect-ratio: 1/1;
+        height: 100%;
+        -o-object-fit: cover;
         object-fit: cover;
+        object-position: center;
+        -o-object-position: center;
       }
 
     }
