@@ -88,19 +88,19 @@ elif DEBUG == False:
 
         'default': {
 
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-            'NAME': 'deassvs5olquln',
+        'NAME': 'deassvs5olquln',
 
-            'USER': 'snmqoznbbnywsz',
+        'USER': 'snmqoznbbnywsz',
 
-            'PASSWORD': 'd45a73532465dbf4f1bc9b59969e83f800a911c2bdacf81b46a5594575e80c0e',
+        'PASSWORD': '<password>',
 
-            'HOST': 'ec2-44-196-174-238.compute-1.amazonaws.com',
+        'HOST': '<db_host>',
 
-            'PORT': '5432',
+        'PORT': '5432',
 
-        }
+    }
     }
 
 # Password validation
