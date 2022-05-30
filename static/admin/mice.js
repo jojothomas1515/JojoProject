@@ -6,13 +6,15 @@ import {
     uploadBytes
 } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-storage.js'
 
-tinyMCE.init({
-    mode: "textareas",
-    plugins: "fullscreen image",
-    toolbar2: 'fullscreen image',
+tinymce.init({
+    selector: "textarea",
+    plugins: "fullscreen image a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker",
+
+    toolbar2:'fullscreen a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
     toolbar1: ' bold    italic    underline    strikethrough    justifyleft    justifycenter    justifyright   justifyfull    bullist    numlist    outdent    indent    cut    copy    paste    undo    redo    link    unlink    image    cleanup    help    code    hr    removeformat    formatselect    fontselect    fontsizeselect    styleselect    sub    sup   forecolor    backcolor    forecolorpicker    backcolorpicker    charmap    visualaid    anchor   newdocument    blockquote   separator',
-    height: "600px",
-    width: "600px",
+    height: "80vh",
+    width: "80vw",
+    toolbar_mode: 'floating',
 
     images_upload_handler: (blobInfo, success, failure) => {
         upload_image(blobInfo, success, failure)
@@ -68,3 +70,12 @@ function upload_image(blobFile, success, failure) {
 
 
 
+
+    // tinymce.init({
+    //   selector: 'textarea',
+    //   plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+    //   toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+    //   toolbar_mode: 'floating',
+    //   tinycomments_mode: 'embedded',
+    //   tinycomments_author: 'Author name',
+    // });
