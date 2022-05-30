@@ -52,7 +52,7 @@ section {
     .card {
       background-color: white;
       box-shadow: 0 4px 10px 1px black;
-      width: 400px;
+      max-width: 400px;
       height: 100%;
       border-radius: 10px;
       padding: 1rem;
@@ -61,7 +61,7 @@ section {
         transform:scale(101%);
       }
       .card-img-con{
-        width: calc(100% - 1rem);
+        max-width: calc(100% - 1rem);
         height: 200px;
         margin:5px auto;
       }
