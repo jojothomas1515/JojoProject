@@ -5,12 +5,10 @@ section {
     color: white;
     display: grid;
     align-items: center;
-    background: url("/static/blog/images/yikr9jXET.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: center;
-
 
 
     & > div {
@@ -26,7 +24,7 @@ section {
 
       a {
 
-        margin:1rem auto;
+        margin: 1rem auto;
       }
     }
   }
@@ -34,14 +32,16 @@ section {
   &.feed {
     background-color: wheat;
     width: 100%;
-    .feed-con{
+
+    .feed-con {
       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
-       grid-gap: 16px;
-       justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
+      grid-gap: 16px;
+      justify-content: center;
       width: 100%;
       padding: 20px;
     }
+
     a {
       all: unset;
       margin-left: auto;
@@ -52,12 +52,19 @@ section {
     .card {
       background-color: white;
       box-shadow: 0 4px 10px 1px black;
-    width: 100%;
-
+      max-width: 400px;
+      height: 100%;
       border-radius: 10px;
       padding: 1rem;
       text-align: center;
-
+      &:hover{
+        transform:scale(101%);
+      }
+      .card-img-con{
+        max-width: calc(100% - 1rem);
+        height: 200px;
+        margin:5px auto;
+      }
       h1 {
         margin-top: 5px;
         margin-bottom: 5px;
@@ -65,11 +72,17 @@ section {
 
       p {
         color: rgba(0, 0, 0, 0.8);
+        word-wrap: anywhere;
       }
 
       img {
         border-radius: .4rem;
         max-width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        object-position: center;
+        -o-object-position: center;
       }
 
     }

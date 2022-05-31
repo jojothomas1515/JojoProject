@@ -1,0 +1,25 @@
+{
+  "name": "jojoproject",
+  "version": "1.0.0",
+  "description": "i picked the name because i don't have a better name in mind",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jojothomas1515/JojoProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jojothomas1515/JojoProject/issues"
+  },
+  "homepage": "https://github.com/jojothomas1515/JojoProject#readme",
+  "dependencies": {
+    "filepicker": "^0.2.0",
+    "firebase": "^9.8.2"
+  },
+  "devDependencies": {}
+}
