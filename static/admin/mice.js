@@ -9,12 +9,10 @@ import {
 tinymce.init({
     selector: "textarea",
     plugins: "fullscreen image a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker",
-
-    toolbar2:'fullscreen a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+    toolbar2: 'alignleft alignright aligncenter a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
     toolbar1: ' bold    italic    underline    strikethrough    justifyleft    justifycenter    justifyright   justifyfull    bullist    numlist    outdent    indent    cut    copy    paste    undo    redo    link    unlink    image    cleanup    help    code    hr    removeformat    formatselect    fontselect    fontsizeselect    styleselect    sub    sup   forecolor    backcolor    forecolorpicker    backcolorpicker    charmap    visualaid    anchor   newdocument    blockquote   separator',
     height: "80vh",
-    width: "80vw",
-    toolbar_mode: 'floating',
+    width: "70vw",
 
     images_upload_handler: (blobInfo, success, failure) => {
         upload_image(blobInfo, success, failure)
@@ -27,17 +25,19 @@ tinymce.init({
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyACnLRz2EmPraAFfi-iq2hopnzg9FoF74g",
+    apiKey: "AIzaSyAGVB5rFi-rrwHKf8hhiSNk8N9ceF5U-z4",
 
-    authDomain: "djangoblog-fb9c4.firebaseapp.com",
+    authDomain: "jojopage-123.firebaseapp.com",
 
-    projectId: "djangoblog-fb9c4",
+    projectId: "jojopage-123",
 
-    storageBucket: "djangoblog-fb9c4.appspot.com",
+    storageBucket: "jojopage-123.appspot.com",
 
-    messagingSenderId: "109437689292",
+    messagingSenderId: "497024102523",
 
-    appId: "1:109437689292:web:d40699b139d1062a3e1169"
+    appId: "1:497024102523:web:5525653e14353041bbf2de",
+
+    measurementId: "G-YCFW0L6CEP"
 
 };
 
@@ -65,17 +65,11 @@ function upload_image(blobFile, success, failure) {
 }
 
 
-
-
-
-
-
-
-    // tinymce.init({
-    //   selector: 'textarea',
-    //   plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
-    //   toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
-    //   toolbar_mode: 'floating',
-    //   tinycomments_mode: 'embedded',
-    //   tinycomments_author: 'Author name',
-    // });
+// tinymce.init({
+//   selector: 'textarea',
+//   plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+//   toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+//   toolbar_mode: 'floating',
+//   tinycomments_mode: 'embedded',
+//   tinycomments_author: 'Author name',
+// });
