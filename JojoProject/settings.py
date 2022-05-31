@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+
 from google.oauth2 import service_account
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,12 +27,12 @@ SECRET_KEY = 'django-insecure-@o7p4mm0p%#i9@@#!c6j4ww#6(u5d*c6)8b94ji4xrsosacjx4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
 ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
 INSTALLED_APPS = [
+    "whitenoise.runserver_nostatic",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -133,14 +134,12 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 if DEBUG == True:
     GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
         os.path.join(BASE_DIR, 'jojopage-123-firebase-adminsdk-l8qsw-810f7d7c00.json')
     )
-
 
     DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
     GS_BUCKET_NAME = 'jojopage-123.appspot.com'
@@ -163,4 +162,5 @@ elif DEBUG == False:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import django_heroku
+
 django_heroku.settings(locals())
