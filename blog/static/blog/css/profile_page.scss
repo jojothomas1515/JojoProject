@@ -1,0 +1,64 @@
+.con-con {
+  width: calc(100%);
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  .profile-img-con {
+    border-radius: 4rem;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  > p {
+    padding: .7rem;
+    background-color: whitesmoke;
+    border-radius: 2rem;
+    width: 25rem;
+  }
+
+
+}
+
+section.profile {
+  position:relative;
+  height: 100vh;
+    background-color: dodgerblue;
+
+  padding-top: 3rem;
+
+  > div {
+    height: inherit;
+  }
+  #profile-edit{
+    position:absolute;
+    top:3rem;
+    right:3rem;
+  }
+}
+
+.modal{
+  z-index: 1000;
+  display:block;
+  position:fixed;
+  background-color: white;
+  top:0;
+  bottom:0;
+  left:0;
+  right: 0;
+  .modal-content{
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10%;
+  }
+  #profile-edit-close{
+    position: absolute;
+    top:2rem;
+    right: 3rem;
+  }
+}

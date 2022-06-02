@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'JojoProject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-if DEBUG == False:
+if DEBUG:
     DATABASES = {
 
         'default': {
@@ -86,7 +86,7 @@ if DEBUG == False:
         }
 
     }
-elif DEBUG == True:
+elif not DEBUG:
     DATABASES = {
 
         'default': {
@@ -136,7 +136,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-if DEBUG == True:
+if not DEBUG:
     GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
         os.path.join(BASE_DIR, 'jojopage-123-firebase-adminsdk-l8qsw-810f7d7c00.json')
     )
@@ -150,7 +150,7 @@ if DEBUG == True:
     STATIC_URL = '/static/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
     MEDIA_URL = '/media/'
-elif DEBUG == False:
+elif DEBUG:
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATIC_URL = '/static/'
@@ -161,4 +161,3 @@ elif DEBUG == False:
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-

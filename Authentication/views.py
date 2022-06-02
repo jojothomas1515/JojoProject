@@ -5,7 +5,7 @@ from django.contrib.messages import error, info
 from django.contrib.auth import login, logout, authenticate
 
 from .isauth import is_authenticated
-from .authform import loginForm, signupForm
+from .authform import loginForm, signupForm, ProfileForm
 # Create your views here.
 @is_authenticated
 def loginPage(request):
@@ -28,9 +28,16 @@ def loginPage(request):
 def signupPage(request):
     if request.method == 'POST':
         form = signupForm(request.POST)
-        if form.is_valid():
+        p_form = ProfileForm(request.POST)
+
+        if form.is_valid() and p_form.is_valid():
             # username,firstname,lastname,email, password1, password2 = form.cleaned_data.get('username'), form.cleaned_data.get('firstname') ,form.cleaned_data.get('lastname'), form.cleaned_data.get('email'), form.cleaned_data.get('password1'),form.cleaned_data.get('password2')
-            form.save()
+            user =form.save()
+            profile = p_form.save(commit=False)
+            profile.user = user
+            profile.save()
+
+
             info(request,"User created successfully, Login Now")
             return redirect('login')
         else:

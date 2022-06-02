@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 
 from .models import blogpost
+from Authentication.models import Profile
 
 
 
@@ -33,9 +34,9 @@ def view_post(req, pk):
     return render(req, 'blog/post.html', context=context)
 
 
-def uppload_file(req):
-    if req.method == 'POST':
-        file = req.FILES
-        img = Image.open(file, ['jpg', 'jpeg', 'png'])  # not working
-        Image.save(img, 'jpeg')
-    return HttpResponse('thank you')
+@login_required(login_url='login')
+def profile_page(req):
+    user = req.user
+
+    context: dict ={'user':user}
+    return render(req , 'blog/profile.html', context=context)

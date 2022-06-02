@@ -1,0 +1,60 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'blog/css/profile_page.css' %}">
+    <script rel="script" src="{% static "blog/js/prof.js" %}" defer></script>
+{% endblock %}
+
+{% block content %}
+    {% if is_admin %}
+        <div style="background:rgba(0,0,0,.6)">
+            <a href="/admin/" class="btn" style="margin-inline:auto; color:white;">admin panel</a>
+        </div>
+    {% endif %}
+    <section class="profile">
+        <div>
+            <i class="fa fa-user-edit" id="profile-edit" data-profile-edit></i>
+            <div class="con-con">
+                {% if user %}
+                    <div class='profile-img-con' style="width: 200px; height: 200px;"><img
+                            style="width: 100%; aspect-ratio:1/1;object-fit: cover;"
+                            src="{{ user.profile.profile_img.url }}"/></div>
+                    <p>{{ user.profile.first_name }}</p>
+                    <p>{{ user.profile.last_name }}</p>
+                    <p>{{ user.email }}</p>
+                    <p>{{ user.profile.phone }}</p>
+
+
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" data-modal>
+    <i class="fa fa-window-close" id="profile-edit-close" data-modal-close></i>
+        <div class="modal-content">
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="image"><div style="width: 200px; height: 200px;"><img id="img-prev" style="width: 100%; aspect-ratio: 1/1; object-fit: cover" src="{{ user.profile.profile_img.url }}"/> </div></label>
+                    <input type="file" name="prof_img" id="prof-img-select"></div>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input placeholder="{{ user.username }}" name="username"></div>
+
+                <div class="input-group">
+                    <label for="first_name">First Name</label>
+                    <input placeholder="{{ user.profile.first_name }}" name="first_name"></div>
+                <div class="input-group">
+                    <label for="last_name">Last Name</label>
+                    <input placeholder="{{ user.profile.last_name }}" name="last_name"></div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input placeholder="{{ user.email }}" name="email">
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+{% endblock %}
