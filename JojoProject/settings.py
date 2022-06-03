@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@o7p4mm0p%#i9@@#!c6j4ww#6(u5d*c6)8b94ji4xrsosacjx4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["http://192.168.9.100/", 'jojopage.herokuapp.com', 'http://jojopage.herokuapp.com', 'https://jojopage.herokuapp.com']
 
 # Application definition
 
@@ -93,13 +93,13 @@ elif not DEBUG:
 
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-            'NAME': 'deassvs5olquln',
+            'NAME': 'dens5fbkj2d87d',
 
-            'USER': 'snmqoznbbnywsz',
+            'USER': 'hyqpracscybmdn',
 
-            'PASSWORD': 'd45a73532465dbf4f1bc9b59969e83f800a911c2bdacf81b46a5594575e80c0e',
+            'PASSWORD': '1fe67b1806cdc634661a86d2e3469ef7a716e417ea9749aaba4100000c29ab21',
 
-            'HOST': 'ec2-44-196-174-238.compute-1.amazonaws.com',
+            'HOST': 'ec2-3-226-163-72.compute-1.amazonaws.com',
             'PORT': '5432',
 
         }
