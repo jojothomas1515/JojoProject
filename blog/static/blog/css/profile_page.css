@@ -52,8 +52,12 @@
   }
 }
 .modal {
+  transition: all 500ms ease-in-out;
+  display: block;
   position: absolute;
   z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
   background-color: dodgerblue;
   top: 0;
   bottom: 0;
@@ -61,24 +65,54 @@
   right: 0;
 }
 .modal > .update-form {
+  max-width: 400px;
+  margin-top: 3rem;
+  margin-right: auto;
+  margin-left: auto;
+  gap: 0.5rem;
+  border: 0.5px solid black;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 0.5rem black inset;
+}
+.modal > .update-form form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
+}
+.modal > .update-form form .input-group {
+  width: 100%;
+  padding: 0.5rem;
+  box-shadow: 0 0 0.3rem black;
+}
+.modal > .update-form form .btn-group button {
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 0.7rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+.modal > .update-form form .btn-group button:hover {
+  color: white;
+  background-color: #1b1b1b;
+  box-shadow: 0 0 0.5rem black;
+  padding: 0.7rem;
 }
 .modal > .update-form input[type=file] {
   display: none;
 }
 .modal > .update-form .modal-p-i-c {
   width: 200px;
-  border: 0.1rem solid black;
   border-radius: 0.8rem;
+  cursor: pointer;
   overflow: hidden;
 }
 .modal > .update-form .modal-p-i-c img {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
+  cursor: pointer;
 }
 .modal > .update-form #close-edit-user {
   position: absolute;
@@ -95,6 +129,11 @@
   border: none;
   outline: none;
   background-color: transparent;
+  cursor: pointer;
+}
+.modal > .update-form .input-group input {
+  color: inherit;
+  width: auto;
 }
 
 /*# sourceMappingURL=profile_page.css.map */

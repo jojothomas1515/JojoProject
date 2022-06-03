@@ -29,3 +29,6 @@ html{
 img{
     max-width:100%
 }
+@viewport {
+    orientation: portrait;
+}
