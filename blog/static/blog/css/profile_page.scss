@@ -1,64 +1,111 @@
-.con-con {
-  width: calc(100%);
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
+.profile-container {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  //background-color: #264b5d;
+  padding: 2rem;
 
-  .profile-img-con {
-    border-radius: 4rem;
-    z-index: 2;
-    overflow: hidden;
+  > .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+
+    #edit-user {
+      position: absolute;
+      top: 7rem;
+      left: 5rem;
+      cursor: pointer;
+
+      &:hover {
+        color: green;
+
+      }
+    }
+
+    .p-i-c {
+      border-radius: 1rem;
+      box-shadow: 0 0 .4rem black;
+      overflow: hidden;
+      height: 10rem;
+
+      > img {
+        height: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        position: center;
+      }
+    }
+
+    .info {
+      font-family: Lato;
+      border-radius: .8rem;
+      display: inline-block;
+      width: 100%;
+      background-color: darkgray;
+      box-shadow: 0 0 .2rem black inset;
+      padding: .5rem;
+
+      .secondary {
+        color: black;
+        opacity: .7;
+      }
+    }
   }
-
-  > p {
-    padding: .7rem;
-    background-color: whitesmoke;
-    border-radius: 2rem;
-    width: 25rem;
-  }
-
 
 }
 
-section.profile {
-  position:relative;
-  height: 100vh;
-    background-color: dodgerblue;
+@media screen and (min-width: 900px) {
+  .profile-container {
+    width: 30%;
+    border-right: .1rem dashed #264b5d;
 
-  padding-top: 3rem;
-
-  > div {
-    height: inherit;
-  }
-  #profile-edit{
-    position:absolute;
-    top:3rem;
-    right:3rem;
   }
 }
 
-.modal{
+.modal {
+  position: absolute;
   z-index: 1000;
-  display:block;
-  position:fixed;
-  background-color: white;
-  top:0;
-  bottom:0;
-  left:0;
+
+  background-color: dodgerblue;
+  top: 0;
+  bottom: 0;
+  left: 0;
   right: 0;
-  .modal-content{
-    width: max-content;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top:10%;
-  }
-  #profile-edit-close{
-    position: absolute;
-    top:2rem;
-    right: 3rem;
+  >.update-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    input[type='file']{
+      display: none;
+    }
+    .modal-p-i-c{
+      width: 200px;
+      border: .1rem solid  black;
+      border-radius: .8rem;
+      overflow: hidden;
+      img{
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+    }
+    #close-edit-user{
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+    .input-group{
+      >*{
+        border:none;
+        outline:none;
+        background-color:transparent;
+      }
+      background-color: #1b1b1b;
+      color: white;
+      border-radius: .8rem;
+      padding: .4rem;
+    }
   }
 }
