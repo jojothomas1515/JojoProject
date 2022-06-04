@@ -6,6 +6,7 @@ from django.contrib.auth import login, logout, authenticate
 
 from .isauth import is_authenticated
 from .authform import loginForm, signupForm, ProfileForm
+
 # Create your views here.
 @is_authenticated
 def loginPage(request):
@@ -47,3 +48,15 @@ def signupPage(request):
 def Logout(request):
     logout(request)
     return redirect('login')
+
+def update_user_information(request, **kwargs):
+    if request.method == 'POST':
+        profile_form = ProfileForm(request.POST, instance=request.user)
+        update_form = signupForm(request.POST, instance=request.user.profile)
+        if profile_form.is_valid() and update_form.is_valid():
+            profile_form.save()
+            update_form.save()
+            redirect('profile')
+        else:
+            error(request, 'failed')
+            return redirect('profile')
