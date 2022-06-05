@@ -8,7 +8,7 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=200, null=True, blank=True)
     last_name = models.CharField(max_length=200, null=True, blank=True)
     phone = models.IntegerField(null=True, blank=True)
-    profile_img = models.ImageField('Profile Image', upload_to=f'./profile/{username}/')
+    profile_img = models.ImageField( upload_to=f'./profile/{username}/', null=True,blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):

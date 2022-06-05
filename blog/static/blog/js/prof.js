@@ -12,3 +12,6 @@ close_edit.addEventListener('click', () => {
     modal.style.opacity = 0;
     modal.style.pointerEvents = 'none';
 })
+
+
+

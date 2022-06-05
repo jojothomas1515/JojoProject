@@ -1,13 +1,16 @@
-import django.contrib.auth.forms
-from django.shortcuts import redirect, render
+from PIL import Image
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.messages import error, info
+from django.shortcuts import redirect, render
 
-from django.contrib.auth import login, logout, authenticate
 
+
+from .authform import ProfileForm, UpdateForm, loginForm, signupForm
 from .isauth import is_authenticated
-from .authform import loginForm, signupForm, ProfileForm
-
 # Create your views here.
+from .models import Profile
+
+
 @is_authenticated
 def loginPage(request):
     if request.method == 'POST':
@@ -33,30 +36,42 @@ def signupPage(request):
 
         if form.is_valid() and p_form.is_valid():
             # username,firstname,lastname,email, password1, password2 = form.cleaned_data.get('username'), form.cleaned_data.get('firstname') ,form.cleaned_data.get('lastname'), form.cleaned_data.get('email'), form.cleaned_data.get('password1'),form.cleaned_data.get('password2')
-            user =form.save()
+            user = form.save()
             profile = p_form.save(commit=False)
             profile.user = user
             profile.save()
 
-
-            info(request,"User created successfully, Login Now")
+            info(request, "User created successfully, Login Now")
             return redirect('login')
         else:
             error(request, form.errors.as_text())
     return render(request, 'Authentication/SignupPage.html')
 
+
 def Logout(request):
     logout(request)
     return redirect('login')
 
+
 def update_user_information(request, **kwargs):
     if request.method == 'POST':
-        profile_form = ProfileForm(request.POST, instance=request.user)
-        update_form = signupForm(request.POST, instance=request.user.profile)
+        print(request.POST)
+        print(request.FILES)
+        profile_form = ProfileForm(request.POST,request.FILES, instance=request.user)
+        update_form = UpdateForm(request.POST, instance=request.user)
+        print(profile_form.errors)
         if profile_form.is_valid() and update_form.is_valid():
-            profile_form.save()
+            user = Profile.objects.get(user=request.user)
+            print(user)
+            user.username = profile_form.cleaned_data['username']
+            user.last_name = profile_form.cleaned_data['last_name']
+            user.first_name = profile_form.cleaned_data['first_name']
+            if request.FILES:
+                user.profile_img =profile_form.cleaned_data['profile_img']
+            user.save()
             update_form.save()
-            redirect('profile')
+
+            return redirect('profile')
         else:
             error(request, 'failed')
             return redirect('profile')
