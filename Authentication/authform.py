@@ -21,7 +21,12 @@ class signupForm(UserCreationForm):
         model = User
         fields= ['username', 'first_name', 'last_name', 'email', 'password1', 'password2' ]
 
+    def clean(self):
+        super(signupForm, self).clean()
+
+
 class ProfileForm(forms.ModelForm):
     class Meta:
         model=Profile
         fields = ['username','first_name', 'last_name', 'user']
+

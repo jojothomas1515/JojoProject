@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-@o7p4mm0p%#i9@@#!c6j4ww#6(u5d*c6)8b94ji4xrsosacjx4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.9.100", 'jojopage.herokuapp.com/', 'http://jojopage.herokuapp.com/', 'https://jojopage.herokuapp.com/']
+ALLOWED_HOSTS = ["192.168.9.100", 'jojopage.herokuapp.com/', 'http://jojopage.herokuapp.com/',
+                 'https://jojopage.herokuapp.com/']
 
 # Application definition
 
@@ -90,19 +91,23 @@ elif not DEBUG:
     DATABASES = {
 
         'default': {
-
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
-            'NAME': 'dens5fbkj2d87d',
-
-            'USER': 'hyqpracscybmdn',
-
-            'PASSWORD': '1fe67b1806cdc634661a86d2e3469ef7a716e417ea9749aaba4100000c29ab21',
-
-            'HOST': 'ec2-3-226-163-72.compute-1.amazonaws.com',
-            'PORT': '5432',
-
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
+        # 'default': {
+        #
+        #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #
+        #     'NAME': 'dens5fbkj2d87d',
+        #
+        #     'USER': 'hyqpracscybmdn',
+        #
+        #     'PASSWORD': '1fe67b1806cdc634661a86d2e3469ef7a716e417ea9749aaba4100000c29ab21',
+        #
+        #     'HOST': 'ec2-3-226-163-72.compute-1.amazonaws.com',
+        #     'PORT': '5432',
+        #
+        # }
     }
 
 # Password validation
