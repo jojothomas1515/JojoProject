@@ -36,6 +36,8 @@ def view_post(req, pk):
 @login_required(login_url='login')
 def profile_page(req):
     user = req.user
+    user_post = blogpost.objects.filter(Author=req.user.profile)
 
-    context: dict ={'user':user}
+    context: dict ={'user':user,'posts':user_post}
+
     return render(req , 'blog/profile.html', context=context)

@@ -1,5 +1,6 @@
 .profile-container {
   position: relative;
+  display: inline-block;
   width: 100%;
   min-height: 90vh;
   //background-color: #264b5d;
@@ -165,4 +166,9 @@
       }
     }
   }
+}
+
+.pp-con{
+  display: flex;
+  flex-wrap: wrap;
 }

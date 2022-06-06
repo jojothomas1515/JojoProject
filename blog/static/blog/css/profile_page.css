@@ -1,5 +1,6 @@
 .profile-container {
   position: relative;
+  display: inline-block;
   width: 100%;
   min-height: 90vh;
   padding: 2rem;
@@ -134,6 +135,11 @@
 .modal > .update-form .input-group input {
   color: inherit;
   width: auto;
+}
+
+.pp-con {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /*# sourceMappingURL=profile_page.css.map */
