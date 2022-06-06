@@ -11,3 +11,5 @@ change the seeting as you see fit , if you've got a staticfile cloud storage do 
 >>heroku config:set DISABLE_COLLECTSTATIC=1
 
 use that command to stop collectstatic from running. since this is app is not going into production it's okay 
+
+Thank you jetbrains

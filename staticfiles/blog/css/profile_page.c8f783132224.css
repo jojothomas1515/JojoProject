@@ -1,0 +1,139 @@
+.profile-container {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  padding: 2rem;
+}
+.profile-container > .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+.profile-container > .profile #edit-user {
+  position: absolute;
+  top: 7rem;
+  left: 5rem;
+  cursor: pointer;
+}
+.profile-container > .profile #edit-user:hover {
+  color: green;
+}
+.profile-container > .profile .p-i-c {
+  border-radius: 1rem;
+  box-shadow: 0 0 0.4rem black;
+  overflow: hidden;
+  height: 10rem;
+}
+.profile-container > .profile .p-i-c > img {
+  height: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  position: center;
+}
+.profile-container > .profile .info {
+  font-family: Lato;
+  border-radius: 0.8rem;
+  display: inline-block;
+  width: 100%;
+  background-color: darkgray;
+  box-shadow: 0 0 0.2rem black inset;
+  padding: 0.5rem;
+}
+.profile-container > .profile .info .secondary {
+  color: black;
+  opacity: 0.7;
+}
+
+@media screen and (min-width: 900px) {
+  .profile-container {
+    width: 30%;
+    border-right: 0.1rem dashed #264b5d;
+  }
+}
+.modal {
+  transition: all 500ms ease-in-out;
+  display: block;
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  background-color: dodgerblue;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.modal > .update-form {
+  max-width: 400px;
+  margin-top: 3rem;
+  margin-right: auto;
+  margin-left: auto;
+  gap: 0.5rem;
+  border: 0.5px solid black;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 0.5rem black inset;
+}
+.modal > .update-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.modal > .update-form form .input-group {
+  width: 100%;
+  padding: 0.5rem;
+  box-shadow: 0 0 0.3rem black;
+}
+.modal > .update-form form .btn-group button {
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 0.7rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+.modal > .update-form form .btn-group button:hover {
+  color: white;
+  background-color: #1b1b1b;
+  box-shadow: 0 0 0.5rem black;
+  padding: 0.7rem;
+}
+.modal > .update-form input[type=file] {
+  display: none;
+}
+.modal > .update-form .modal-p-i-c {
+  width: 200px;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+.modal > .update-form .modal-p-i-c img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  cursor: pointer;
+}
+.modal > .update-form #close-edit-user {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.modal > .update-form .input-group {
+  background-color: #1b1b1b;
+  color: white;
+  border-radius: 0.8rem;
+  padding: 0.4rem;
+}
+.modal > .update-form .input-group > * {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.modal > .update-form .input-group input {
+  color: inherit;
+  width: auto;
+}
+
+/*# sourceMappingURL=profile_page.c8f783132224.css.map */
