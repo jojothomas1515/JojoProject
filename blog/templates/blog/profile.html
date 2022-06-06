@@ -18,7 +18,11 @@
     <div class="profile">
         <i class="fa fa-user-edit" id="edit-user" data-user-edit-icon></i>
         <div class="p-i-c">
+            {% if user.profile.profile_img %}
             <a href="{{user.profile.profile_img.url}}" id="img_link" target="_blank"><img src="{{user.profile.profile_img.url}}"/></a>
+            {% else %}
+                        <a href="{% static 'blog/images/cool.jpg' %}" id="img_link" target="_blank"><img src="{% static 'blog/images/cool.jpg' %}"/></a>
+            {% endif %}
         </div>
         <p class="info"><span class="secondary">Username :</span> {{ user.profile.username }}</p>
         <p class="info"><span class="secondary">Email : </span>{{ user.email }}</p>
@@ -38,8 +42,15 @@
         <form method="post" action="{% url 'updateProfile' %}" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="modal-p-i-c">
+                {% if user.profile.profile_img %}
                 <label for="profile_image_select"><img src="{{user.profile.profile_img.url}}"/></label>
                 <input id="profile_image_select" type="file" name="profile_img">
+                {% else%}
+
+                <label for="profile_image_select"><img src="{% static 'blog/images/cool.jpg' %}"/></label>
+                <input id="profile_image_select" type="file" name="profile_img">
+                {% endif %}
+
             </div>
             <div class="input-group">
                 <label for="username">username</label>
