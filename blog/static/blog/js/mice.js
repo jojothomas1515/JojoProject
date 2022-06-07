@@ -12,7 +12,7 @@ tinymce.init({
     toolbar2: 'alignleft alignright aligncenter a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
     toolbar1: ' fullscreen bold    italic    underline    strikethrough    justifyleft    justifycenter    justifyright   justifyfull    bullist    numlist    outdent    indent    cut    copy    paste    undo    redo    link    unlink    image    cleanup    help    code    hr    removeformat    formatselect    fontselect    fontsizeselect    styleselect    sub    sup   forecolor    backcolor    forecolorpicker    backcolorpicker    charmap    visualaid    anchor   newdocument    blockquote   separator',
     height: "80vh",
-    width: "70vw",
+    width: "100%",
 
     images_upload_handler: (blobInfo, success, failure) => {
         upload_image(blobInfo, success, failure)
