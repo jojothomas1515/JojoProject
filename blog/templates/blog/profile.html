@@ -46,8 +46,8 @@
                     {% csrf_token %}
                     <div class="modal-p-i-c">
                         {% if user.profile.profile_img %}
-                            <label for="profile_image_select"><img src="{{ user.profile.profile_img.url }}"/></label>
-                            <input id="profile_image_select" type="file" name="profile_img">
+                            <label for="profile_image_select"><img src="{{ user.profile.profile_img.url }}" id="mi-c"/></label>
+                            <input id="profile_image_select" type="file" name="profile_img" data-input-image>
                         {% else %}
 
                             <label for="profile_image_select"><img src="{% static 'blog/images/cool.jpg' %}"/></label>

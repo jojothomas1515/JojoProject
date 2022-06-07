@@ -1,11 +1,9 @@
-from PIL import Image
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
+
+from .forms import PostForm
 from .models import blogpost
-from Authentication.models import Profile
-
-
 
 
 # Create your views here.
@@ -38,6 +36,13 @@ def profile_page(req):
     user = req.user
     user_post = blogpost.objects.filter(Author=req.user.profile)
 
-    context: dict ={'user':user,'posts':user_post}
+    context: dict = {'user': user, 'posts': user_post}
 
-    return render(req , 'blog/profile.html', context=context)
+    return render(req, 'blog/profile.html', context=context)
+
+
+@login_required(login_url='login')
+def add_post(req) -> HttpResponse:
+    form: PostForm = PostForm(instance=req.user.profile)
+    context: dict = {'post': form}
+    return render(req, 'blog/add_post.html', context=context)
