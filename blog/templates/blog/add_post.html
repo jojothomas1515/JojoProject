@@ -15,10 +15,11 @@
             <form action="" method="post" class="postform">
                 {% csrf_token %}
                 <div class="post-form-grid">
-                    <div class="g-1">{{ post.title.label }}{{ post.title }}</div>
-                    <div class="g-2"><label for="id_logo">Select Cover Image </label>{{ post.logo }}</div>
+                    <div class="g-1"><label for="id_title">{{ post.title.label }}</label>{{ post.title }}</div>
+                    <div class="g-2"><label for="id_logo"><i class="fa fa-add fa-3x"></i> </label>{{ post.logo }}<p id="img_name">Cover Image</p></div>
                     <div class="g-3"><label for="id_summary">Quick Info </label>{{ post.summary }}</div>
                     <div class="g-4">  {{ post.Post }}</div>
+                    <div class="submit-post-btn"><button class="sub-btn">Post</button></div>
                 </div>
 
             </form>

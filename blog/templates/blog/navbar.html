@@ -1,6 +1,6 @@
 <div class="navbar">
     <div class="navbar-con ">
-        <h1> Jojo's <span>Page</span></h1>
+        <a class="logo-link" href="{% url 'home' %}"><h1> Jojo's <span>Page</span></h1></a>
 
         <nav class="">
             <label for="check"> <i class="fa fa-bars fa-2x bars" data-navbars></i>
@@ -9,6 +9,8 @@
             <ul class="nav-items">
                 <a href="{% url 'home' %}" class="btn link-btn">Home</a>
                 <a href="{% url 'profile' %}" class="btn link-btn">Profile</a>
+                <a href="{% url 'addpost' %}" class="btn link-btn">Add Post</a>
+                <a href="{% url 'about' %}" class="btn link-btn">About</a>
                 <a href="{% url 'logout' %}" class="btn link-logout"><i class="fas fa-door-open"></i> </a>
 
             </ul>

@@ -106,5 +106,9 @@
     background-color: red;
   }
 }
+.logo-link {
+  all: unset;
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=navbar.css.map */
