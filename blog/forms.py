@@ -8,6 +8,9 @@ class PostForm(forms.ModelForm):
         model = blogpost
         fields = '__all__'
         exclude = ['Author']
-    def save(self, commit=True):
-        print('saving')
-        super().save()
+
+
+class TestForm(forms.ModelForm):
+    class Meta:
+        model = blogpost
+        fields = '__all__'

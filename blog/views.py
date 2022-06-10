@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 
-from .forms import PostForm
+from .forms import PostForm, TestForm
 from .models import blogpost
 
 
@@ -47,13 +47,7 @@ def profile_page(req):
 def add_post(req) -> HttpResponse:
     form: PostForm = PostForm(instance=req.user.profile)
     context: dict = {'post': form}
-    if req.method == 'POST':
-        post = PostForm(req.POST, instance=req.user.profile)
-        if post.is_valid():
-            post.save(commit=False)
-            post.Author = req.user.profile
-            post.save()
-            return redirect('home')
+
 
     return render(req, 'blog/add_post.html', context=context)
 
@@ -61,3 +55,20 @@ def add_post(req) -> HttpResponse:
 @login_required(login_url='login')
 def about_page(req):
     return render(req, 'blog/about.html')
+
+def add_post_db(req):
+
+
+    if req.method == 'POST':
+        post = PostForm(req.POST, req.FILES)
+        post.Author = req.user.profile
+
+        if post.is_valid():
+            post = post.save()
+            upost = get_object_or_404(blogpost, pk=post.id)
+            upost.Author= req.user.profile
+            upost.save()
+
+            return redirect('home')
+    else:
+        return redirect('addpost')

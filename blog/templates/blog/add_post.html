@@ -12,7 +12,7 @@
 {% block content %}
     {% if post %}
         <div class="post-form-con">
-            <form action="" method="post" class="postform">
+            <form action="{% url 'addposttodb' %}" method="post" class="postform">
                 {% csrf_token %}
                 <div class="post-form-grid">
                     <div class="g-1"><label for="id_title">{{ post.title.label }}</label>{{ post.title }}</div>
