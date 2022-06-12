@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block extrahead %}
+    <script src="https://cdn.tiny.cloud/1/d9m4hvsl1qdh8ynl5tr46992sdwjddvi1jnqh8080zhqv1yj/tinymce/5/tinymce.min.js"
+            referrerpolicy="origin"></script>
+    <script src="{% static 'blog/js/mice.js' %}" type="module"></script>
+    <link rel="stylesheet" href="{% static 'blog/css/post_form.css' %}"/>
+
+{% endblock %}
+
+{% block content %}
+    {% if post %}
+        <div class="post-form-con">
+            <form action="{% url 'addposttodb' %}" method="post" class="postform" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="post-form-grid">
+                    <div class="g-1"><label for="id_title">{{ post.title.label }}</label>{{ post.title }}</div>
+                    <div class="g-2"><label for="id_logo"><i class="fa fa-add fa-3x"></i> </label>{{ post.logo }}<p id="img_name">Cover Image</p></div>
+                    <div class="g-3"><label for="id_summary">Quick Info </label>{{ post.summary }}</div>
+                    <div class="g-4">  {{ post.Post }}</div>
+                    <div class="submit-post-btn"><button class="sub-btn">Post</button></div>
+                </div>
+
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}

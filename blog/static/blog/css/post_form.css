@@ -1,0 +1,129 @@
+.post-form-con {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.post-form-grid {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 4rem 3rem 100% 2rem;
+    border: 1px solid #212121;
+    grid-template-areas:
+    'a b'
+    'c c'
+    'd d'
+    's s';
+
+}
+
+.g-1 {
+    grid-area: a;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    gap: .7rem;
+    border: 1px solid #212121;
+
+}
+
+.g-1 > :first-child {
+    padding-left: .8rem;
+    width: max-content;
+    cursor: pointer;
+}
+
+.g-1 #id_title {
+    font-size: 2rem;
+    padding: 0 1rem;
+    outline: none;
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+
+.g-1 > * {
+    width: 100%;
+}
+
+.g-2 {
+    grid-area: b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: small;
+    border: 1px solid #212121;
+    margin-bottom: 1px;
+
+}
+
+.g-2 label {
+
+    text-align: center;
+    color: green;
+    cursor: pointer;
+
+}
+
+.g-2 input {
+    display: none;
+}
+
+
+.g-3 {
+    grid-area: c;
+    display: flex;
+    align-items: center;
+    border: 1px solid #212121;
+    gap: .7rem;
+    padding: 1rem;
+}
+
+.g-3 > * {
+    width: 100%;
+}
+
+.g-3 input {
+    border: none;
+    outline: none;
+}
+
+.g-3 > :first-child {
+    width: fit-content;
+}
+
+.g-4 {
+    grid-area: d;
+}
+
+.submit-post-btn {
+    grid-area: s;
+    border-top: .5rem solid black;
+}
+
+.submit-post-btn > :only-child {
+    all: unset;
+    background: darkslategray;
+    text-align: center;
+    display: block;
+    color: white;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition-property: scale, border-radius, box-shadow, background-color;
+    transition:  150ms ease-in-out;
+}
+
+.submit-post-btn > :only-child:hover{
+    scale: 1.01;
+    border-radius: 1rem;
+    box-shadow: 0 0 .5rem black;
+    background-color: darkslategray;
+}
+
+/*#id_title{*/
+/*    width: 100%;*/
+/*    font-size: xxx-large;*/
+/*}*/
+

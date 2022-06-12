@@ -1,7 +1,8 @@
 .profile-container {
   position: relative;
+  display: inline-block;
   width: 100%;
-  min-height: 90vh;
+  min-height: max-content;
   //background-color: #264b5d;
   padding: 2rem;
 
@@ -58,7 +59,7 @@
 
 @media screen and (min-width: 900px) {
   .profile-container {
-    width: 30%;
+    width: 25%;
     border-right: .1rem dashed #264b5d;
 
   }
@@ -165,4 +166,17 @@
       }
     }
   }
+}
+
+.pp-con{
+  display: flex;
+  flex-wrap: wrap;
+}
+.card{
+  width: 350px !important;
+}
+.post-con{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap:.7rem !important;
 }

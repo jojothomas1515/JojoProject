@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static "blog/css/about.css" %}">
+{% endblock %}
+{% block content %}
+    <main class="about-me">
+        <div class="img-con">
+            <img src="{% static "blog/images/cool.jpg" %}"/>
+        </div>
+        <h3 class="about-head">
+            About Me
+        </h3>
+
+        <p>
+            I Joseph Thomas, I'm an adventurer exploring the vast land of web development and picking up XP point along
+            the way.
+        </p>
+        <p>
+            So far in my journey I've traveled through the town of <b>React.js</b> and it was marvelous, while there I
+            learnt about SPA and the beauty of it.
+        </p>
+        <p>
+            Now I'm exploring the city of <b>Django</b> in the country of <b>Python</b>, and this is one of my Projects
+        </p>
+        <p> If you want to see the code <a href="https://github.com/jojothomas1515/JojoProject" >Click Here</a></p>
+
+
+        </div>
+    </main>
+{% endblock %}
