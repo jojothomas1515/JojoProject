@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             name='posts',
         ),
         migrations.AddField(
-            model_name='blogpost',
+            model_name='BlogPost',
             name='posts',
             field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='blog.profile'),
         ),

@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('last_name', models.CharField(blank=True, max_length=200, null=True)),
                 ('phone', models.IntegerField(blank=True, max_length=20, null=True)),
                 ('profile_img', models.ImageField(upload_to='./profile/<django.db.models.fields.CharField>/', verbose_name='Profile Image')),
-                ('posts', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='blog.blogpost')),
+                ('posts', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='blog.BlogPost')),
                 ('user', models.OneToOneField(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),

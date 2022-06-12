@@ -2,7 +2,7 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  min-height: 90vh;
+  min-height: max-content;
   padding: 2rem;
 }
 .profile-container > .profile {
@@ -48,7 +48,7 @@
 
 @media screen and (min-width: 900px) {
   .profile-container {
-    width: 30%;
+    width: 25%;
     border-right: 0.1rem dashed #264b5d;
   }
 }
@@ -140,6 +140,16 @@
 .pp-con {
   display: flex;
   flex-wrap: wrap;
+}
+
+.card {
+  width: 350px !important;
+}
+
+.post-con {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.7rem !important;
 }
 
 /*# sourceMappingURL=profile_page.css.map */

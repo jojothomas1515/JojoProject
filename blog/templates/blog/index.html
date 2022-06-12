@@ -20,7 +20,7 @@
             <h3>Interact and Connect</h3>
 
             <p>to know more about us </p>
-            <a href="#" class="btn"> click here</a>
+            <a href="{% url 'about' %}" class="btn"> click here</a>
         </div>
     </section>
     <section class="feed">
@@ -33,8 +33,8 @@
                         <img src="{% if post.logo %}{{ post.logo.url }}{% else %} {% static 'blog/images/cool.jpg' %}{% endif %}" alt="no picture">
                     </div>
                         <p class="">{{ post.summary }}</p>
-
                         <sub class="">{{ post.pub_date }} {{ post.pub_time }}</sub>
+                    <p> <sub class="">Author: {{ post.Author }}</sub></p>
 
                 </div>
             </a>

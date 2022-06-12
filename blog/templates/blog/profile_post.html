@@ -1,6 +1,6 @@
 {% load static %}
 <section class="posts">
-<h1 class="posts-page-heading">Post</h1>
+    <h1 class="posts-page-heading">Post</h1>
     <div class="post-con">
         {% for post in posts %}
             <a href="{% url "post" post.id %}">
@@ -8,6 +8,7 @@
                     <h4 class="card-header">{{ post.title }}</h4>
                     <div class="card-img-con">
                         <img src="
+
                                 {% if post.logo %}{{ post.logo.url }}{% else %} {% static 'blog/images/cool.jpg' %}{% endif %}"
                              alt="no picture">
                     </div>
@@ -18,6 +19,5 @@
                 </div>
             </a>
         {% endfor %}
-    </div>
     </div>
 </section>

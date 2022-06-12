@@ -5,7 +5,7 @@ from Authentication.models import Profile
 # Create your models here.
 
 
-class blogpost(models.Model):
+class BlogPost(models.Model):
     title = models.CharField(max_length=200)
     Post = models.TextField(null=True, blank=True)
     logo = models.ImageField('head image', null=True, blank=True)

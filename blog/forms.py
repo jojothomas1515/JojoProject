@@ -1,16 +1,16 @@
 from django import forms
 
-from .models import blogpost
+from .models import BlogPost
 
 
 class PostForm(forms.ModelForm):
     class Meta:
-        model = blogpost
+        model = BlogPost
         fields = '__all__'
         exclude = ['Author']
 
 
 class TestForm(forms.ModelForm):
     class Meta:
-        model = blogpost
+        model = BlogPost
         fields = '__all__'

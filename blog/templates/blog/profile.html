@@ -20,9 +20,11 @@
                 <div class="p-i-c">
                     {% if user.profile.profile_img %}
                         <a href="{{ user.profile.profile_img.url }}" id="img_link" target="_blank"><img
+                                alt="profile_image"
                                 src="{{ user.profile.profile_img.url }}"/></a>
                     {% else %}
                         <a href="{% static 'blog/images/cool.jpg' %}" id="img_link" target="_blank"><img
+                                alt="profile_image"
                                 src="{% static 'blog/images/cool.jpg' %}"/></a>
                     {% endif %}
                 </div>
@@ -46,11 +48,11 @@
                     {% csrf_token %}
                     <div class="modal-p-i-c">
                         {% if user.profile.profile_img %}
-                            <label for="profile_image_select"><img src="{{ user.profile.profile_img.url }}" id="mi-c"/></label>
+                            <label for="profile_image_select"><img  alt="profile_image" src="{{ user.profile.profile_img.url }}" id="mi-c"/></label>
                             <input id="profile_image_select" type="file" name="profile_img" data-input-image>
                         {% else %}
 
-                            <label for="profile_image_select"><img src="{% static 'blog/images/cool.jpg' %}"/></label>
+                            <label for="profile_image_select"><img alt="profile_image" src="{% static 'blog/images/cool.jpg' %}"/></label>
                             <input id="profile_image_select" type="file" name="profile_img">
                         {% endif %}
 
