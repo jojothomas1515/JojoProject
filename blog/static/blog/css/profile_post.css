@@ -9,6 +9,7 @@
 }
 
 .post-con {
+
     display: flex;
     /*flex-direction: column;*/
     flex-wrap: wrap;
@@ -76,6 +77,40 @@
         justify-content: flex-start;
     }
 
+}
+
+.opt-icon{
+    position:absolute;
+    top: .5rem;
+    right:1rem;
+    padding: .5rem;
+}
+.opt-icon:hover{
+    cursor: pointer;
+    color: green;
+}
+.option{
+    position: absolute;
+    right: .5rem;
+    top:2rem;
+    padding:.5rem;
+    background-color: grey;
+    color: white;
+    box-shadow: .1rem .1rem .2rem black;
+}
+.option button{
+    background-color: darkred ;
+    color: oldlace;
+    border: none;
+    padding: .4rem;
+    cursor: pointer;
+    transition: box-shadow 200ms ease-in-out;
+}
+.option button:hover{
+    box-shadow: .07rem .07rem .14rem black;
+}
+.card{
+    position:relative;
 }
 
 

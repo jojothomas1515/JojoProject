@@ -3,9 +3,16 @@
     <h1 class="posts-page-heading">Post</h1>
     <div class="post-con">
         {% for post in posts %}
-            <a href="{% url "post" post.id %}">
+
                 <div class="card">
-                    <h4 class="card-header">{{ post.title }}</h4>
+                <i class="opt-icon fa fa-bars"></i>
+                <div class="option" style="display: none">
+                    <button class="option-items" id="delete-post"  data-postId="{{ post.id }}">
+                        delete post
+                    </button>
+                </div>
+                  <a href="{% url "post" post.id %}">
+                    <h4 class="card-header">{{ post.title }} </h4>
                     <div class="card-img-con">
                         <img src="
 
@@ -15,9 +22,9 @@
                     <p class="">{{ post.summary }}</p>
 
                     <sub class="">{{ post.pub_date }} {{ post.pub_time }}</sub>
+                  </a>
 
                 </div>
-            </a>
         {% endfor %}
     </div>
 </section>
