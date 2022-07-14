@@ -4,14 +4,15 @@
 
 {% block extrahead %}
     <link rel="stylesheet" href="{% static "/blog/css/index.css" %}">
+    <script src="{% static 'blog/js/index.js'%}" defer></script>
 {% endblock %}
 
 {% block content %}
-  {% if is_admin %}
-      <div style="background:rgba(0,0,0,.6)">
-          <a href="/admin/" class="btn" style="margin-inline:auto; color:white;">admin panel</a>
-      </div>
-  {% endif %}
+    {% if is_admin %}
+        <div style="background:rgba(0,0,0,.6)">
+            <a href="/admin/" class="btn" style="margin-inline:auto; color:white;">admin panel</a>
+        </div>
+    {% endif %}
     <section class="intro" style="background-image:url('{% static 'blog/images/yikr9jXET.jpg' %}')">
         <div class="container">
             <h1>
@@ -24,25 +25,35 @@
         </div>
     </section>
     <section class="feed">
-    <div class="center-container">
-                <div class="feed-con container">
-            {% for post in posts %}
-              <a href="{% url "post" post.id %}">
-                <div class="card">
-                    <h4 class="card-header">{{ post.title }}</h4>
-                    <div class="card-img-con">
-                        <img src="{% if post.logo %}{{ post.logo.url }}{% else %} {% static 'blog/images/cool.jpg' %}{% endif %}" alt="no picture">
+        <div class="center-container">
+            <div class="feed-con container">
+                {% for post in posts %}
+                    <div class="card">
+                        <i class="opt-icon fa fa-bars"></i>
+                        <div class="option" style="display: none">
+                            <button class="option-items" id="delete-post" data-postId="{{ post.id }}">
+                                delete post
+                            </button>
+                        </div>
+                        <a href="{% url "post" post.id %}">
+                            <h4 class="card-header">{{ post.title }}</h4>
+                            <div class="card-img-con">
+                                <img src="
+
+
+                                        {% if post.logo %}{{ post.logo.url }}{% else %} {% static 'blog/images/cool.jpg' %}{% endif %}"
+                                     alt="no picture">
+                            </div>
+                            <p class="">{{ post.summary }}</p>
+                            <sub class="">{{ post.pub_date }} {{ post.pub_time }}</sub>
+                            <p><sub class="">Author: {{ post.Author }}</sub></p>
+
+                        </a>
                     </div>
-                        <p class="">{{ post.summary }}</p>
-                        <sub class="">{{ post.pub_date }} {{ post.pub_time }}</sub>
-                    <p> <sub class="">Author: {{ post.Author }}</sub></p>
+                {% endfor %}
+            </div>
 
-                </div>
-            </a>
-            {% endfor %}
         </div>
-
-    </div>
     </section>
 
 {% endblock %}
