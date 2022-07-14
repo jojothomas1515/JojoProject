@@ -24,7 +24,8 @@
         </div>
     </section>
     <section class="feed">
-        <div class="feed-con container">
+    <div class="center-container">
+                <div class="feed-con container">
             {% for post in posts %}
               <a href="{% url "post" post.id %}">
                 <div class="card">
@@ -40,6 +41,8 @@
             </a>
             {% endfor %}
         </div>
+
+    </div>
     </section>
 
 {% endblock %}

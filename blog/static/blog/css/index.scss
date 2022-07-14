@@ -40,6 +40,10 @@ section {
       justify-content: center;
       width: 100%;
       padding: 20px;
+
+      @media screen and (min-width: 760px) {
+        justify-content: start;
+      }
     }
 
     a {
@@ -87,6 +91,13 @@ section {
 
     }
   }
+}
+
+.center-container{
+  min-width: 90%;
+  max-width: max-content;
+  margin: 0 auto !important;
+  box-shadow: #888888 0 0 .3rem inset  ;
 }
 
 

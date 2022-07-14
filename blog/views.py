@@ -12,6 +12,7 @@ from .models import BlogPost
 def index(req):
     posts = BlogPost.objects.all()
     context = {'posts': posts}
+    context['user'] = req.user
     if req.user.is_staff:
         context['is_admin'] = True
     else:
@@ -35,7 +36,6 @@ def view_post(req, pk):
 def profile_page(req):
     user = req.user
     user_post = BlogPost.objects.filter(Author=req.user.profile)
-
     context: dict = {'user': user, 'posts': user_post}
 
     return render(req, 'blog/profile.html', context=context)
@@ -54,6 +54,7 @@ def about_page(req):
     return render(req, 'blog/about.html')
 
 
+@login_required(login_url='login')
 def add_post_db(req):
     if req.method == 'POST':
         post = PostForm(req.POST, req.FILES)
@@ -67,3 +68,13 @@ def add_post_db(req):
             return redirect('home')
     else:
         return redirect('addpost')
+
+
+@login_required(login_url='login')
+def delete_post(request, pk):
+    if request.method == 'DELETE':
+        post = BlogPost.objects.get(pk=pk)
+        post.delete()
+        return HttpResponse(status=200)
+    else:
+        return HttpResponse(status=407)

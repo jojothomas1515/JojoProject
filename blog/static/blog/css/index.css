@@ -33,6 +33,11 @@ section.feed .feed-con {
   width: 100%;
   padding: 20px;
 }
+@media screen and (min-width: 760px) {
+  section.feed .feed-con {
+    justify-content: start;
+  }
+}
 section.feed a {
   all: unset;
   margin-left: auto;
@@ -72,6 +77,13 @@ section.feed .card img {
   object-fit: cover;
   object-position: center;
   -o-object-position: center;
+}
+
+.center-container {
+  min-width: 90%;
+  max-width: max-content;
+  margin: 0 auto !important;
+  box-shadow: #888888 0 0 0.3rem inset;
 }
 
 /*# sourceMappingURL=index.css.map */
