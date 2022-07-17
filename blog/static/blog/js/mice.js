@@ -7,7 +7,6 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-storage.js'
 
 tinymce.init({
-    apiKey: "vvnjdihxjvesyvkw33xlcxniivipwdkyyj0yj9ha3xsqbj5g",
     selector: "textarea",
     plugins: "fullscreen image a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker",
     toolbar2: 'alignleft alignright aligncenter a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
