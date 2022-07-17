@@ -35,7 +35,7 @@ section.feed .feed-con {
 }
 @media screen and (min-width: 760px) {
   section.feed .feed-con {
-    justify-content: start;
+    justify-content: space-around;
   }
 }
 section.feed a {
@@ -46,15 +46,17 @@ section.feed a {
 }
 section.feed .card {
   background-color: white;
-  box-shadow: 0 4px 10px 1px black;
+  box-shadow: 1px 1px 4px 1px black;
   width: 350px;
   height: 100%;
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
+  transition: all 150ms ease-in-out;
 }
 section.feed .card:hover {
   transform: scale(101%);
+  box-shadow: 4px 4px 5px 1px black;
 }
 section.feed .card .card-img-con {
   max-width: calc(100% - 1rem);
@@ -84,6 +86,50 @@ section.feed .card img {
   max-width: max-content;
   margin: 0 auto !important;
   box-shadow: #888888 0 0 0.3rem inset;
+}
+
+.opt-icon {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  padding: 0.5rem;
+}
+
+.opt-icon:hover {
+  cursor: pointer;
+  color: green;
+}
+
+.option {
+  position: absolute;
+  right: 0.5rem;
+  top: 2rem;
+  padding: 0.5rem;
+  color: white;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.2rem black;
+}
+
+.option button {
+  background-color: darkred;
+  color: oldlace;
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
+  transition: box-shadow 200ms ease-in-out;
+}
+
+.option button:hover {
+  box-shadow: 0.07rem 0.07rem 0.14rem black;
+}
+
+.card {
+  position: relative;
+}
+
+#edit-post {
+  background-color: cadetblue !important;
 }
 
 /*# sourceMappingURL=index.css.map */

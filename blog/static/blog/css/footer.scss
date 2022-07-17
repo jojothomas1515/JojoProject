@@ -1,9 +1,5 @@
 
 footer{
-  position:relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
       background-color: darkslategrey;
   padding: 1rem;
   >div{
@@ -11,8 +7,7 @@ footer{
     color: whitesmoke;
     text-align: center;
     > *{
-      margin-top: 10px;
-      margin-bottom: 10px;
+
     }
   }
 }

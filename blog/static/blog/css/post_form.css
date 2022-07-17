@@ -7,13 +7,12 @@
 .post-form-grid {
     display: grid;
     grid-template-columns: 90% 10%;
-    grid-template-rows: 4rem 3rem 100% 2rem;
+    grid-template-rows: 4rem  2rem 100%;
     border: 1px solid #212121;
     grid-template-areas:
     'a b'
-    'c c'
-    'd d'
-    's s';
+    's s'
+    'd d';
 
 }
 
@@ -71,27 +70,9 @@
 }
 
 
-.g-3 {
-    grid-area: c;
-    display: flex;
-    align-items: center;
-    border: 1px solid #212121;
-    gap: .7rem;
-    padding: 1rem;
-}
 
-.g-3 > * {
-    width: 100%;
-}
 
-.g-3 input {
-    border: none;
-    outline: none;
-}
 
-.g-3 > :first-child {
-    width: fit-content;
-}
 
 .g-4 {
     grid-area: d;
@@ -127,3 +108,6 @@
 /*    font-size: xxx-large;*/
 /*}*/
 
+.g-2 > label + *{
+  display: none;
+}

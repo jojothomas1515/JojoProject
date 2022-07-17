@@ -12,7 +12,7 @@ from .models import BlogPost
 def index(req):
     posts = BlogPost.objects.all()
     context = {'posts': posts}
-    context['user'] = req.user
+    context["postOwner"] = req.user.profile
     if req.user.is_staff:
         context['is_admin'] = True
     else:
@@ -45,29 +45,59 @@ def profile_page(req):
 def add_post(req) -> HttpResponse:
     form: PostForm = PostForm(instance=req.user.profile)
     context: dict = {'post': form}
-
-    return render(req, 'blog/add_post.html', context=context)
-
-
-@login_required(login_url='login')
-def about_page(req):
-    return render(req, 'blog/about.html')
-
-
-@login_required(login_url='login')
-def add_post_db(req):
     if req.method == 'POST':
         post = PostForm(req.POST, req.FILES)
 
         if post.is_valid():
             post = post.save(commit=False)
-            print(req.FILES.get('logo'))
             post.Author = req.user.profile
             post.save()
 
             return redirect('home')
-    else:
-        return redirect('addpost')
+   
+
+    return render(req, 'blog/add_post.html', context=context)
+
+@login_required(login_url='login')
+def edit_post(req, pk) -> HttpResponse:
+    post_item = BlogPost.objects.get(pk=pk)
+    form: PostForm = PostForm(instance=post_item)
+    context: dict = {'post': form}
+    if req.method == 'POST':
+        post = PostForm(req.POST, req.FILES)
+
+        if post.is_valid():
+            post_item._do_update(post)
+            # post_item.title = post.title
+            # post_item.Post = post.Post
+            # post.logo = post.logo
+
+            return redirect('home')
+
+
+    return render(req, 'blog/add_post.html', context=context)
+
+
+@login_required(login_url='login')
+def edit_post(req, pk) -> HttpResponse:
+    post = BlogPost.objects.get(pk=pk)
+    form: PostForm = PostForm(instance=post)
+    context: dict = {'post': form, 'id':pk}
+    if req.method == 'POST':
+        post = PostForm(req.POST, req.FILES, instance=post)
+
+        if post.is_valid():
+            post = post.save()
+
+            return redirect('home')
+
+
+    return render(req, 'blog/edit_post.html', context=context)
+
+
+@login_required(login_url='login')
+def about_page(req):
+    return render(req, 'blog/about.html')
 
 
 @login_required(login_url='login')

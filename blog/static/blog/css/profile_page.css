@@ -13,12 +13,18 @@
 }
 .profile-container > .profile #edit-user {
   position: absolute;
+  padding: 0.2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.3rem;
   top: 7rem;
   left: 5rem;
   cursor: pointer;
+  box-shadow: 0 0 0.2rem black inset;
+  transition: 200ms ease-in-out;
 }
 .profile-container > .profile #edit-user:hover {
   color: green;
+  box-shadow: 0 0 0.2rem black;
 }
 .profile-container > .profile .p-i-c {
   border-radius: 1rem;

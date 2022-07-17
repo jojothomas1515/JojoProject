@@ -12,13 +12,17 @@
 {% block content %}
     {% if post %}
         <div class="post-form-con">
-            <form action="{% url 'addpost' %}" method="post" class="postform" enctype="multipart/form-data">
+            <form action="{% url 'editpost' id %}" method="post" class="postform" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="post-form-grid">
                     <div class="g-1"><label for="id_title">{{ post.title.label }}</label>{{ post.title }}</div>
-                    <div class="g-2"><label for="id_logo"><i class="fa fa-add fa-3x"></i> </label><div>{{ post.logo }}</div><p id="img_name">Cover Image</p></div>
+                    <div class="g-2"><label for="id_logo"><i class="fa fa-add fa-3x"></i> </label>
+                        <div>{{ post.logo }}</div>
+                        <p id="img_name">Cover Image</p></div>
                     <div class="g-4">  {{ post.Post }}</div>
-                    <div class="submit-post-btn"><button class="sub-btn">Click here to Post</button></div>
+                    <div class="submit-post-btn">
+                        <button class="sub-btn">Click here to Post</button>
+                    </div>
                 </div>
 
             </form>
