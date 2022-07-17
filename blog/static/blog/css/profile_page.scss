@@ -14,12 +14,19 @@
 
     #edit-user {
       position: absolute;
+      padding: .2rem;
+      background-color: rgba(255, 255, 255, .8);
+      border-radius: .3rem;
       top: 7rem;
       left: 5rem;
       cursor: pointer;
+      box-shadow: 0 0 .2rem black inset;
+      transition: 200ms ease-in-out;
 
       &:hover {
         color: green;
+        box-shadow: 0 0 .2rem black ;
+
 
       }
     }
@@ -168,15 +175,17 @@
   }
 }
 
-.pp-con{
+.pp-con {
   display: flex;
   flex-wrap: wrap;
 }
-.card{
+
+.card {
   width: 350px !important;
 }
-.post-con{
+
+.post-con {
   display: flex !important;
   flex-wrap: wrap !important;
-  gap:.7rem !important;
+  gap: .7rem !important;
 }

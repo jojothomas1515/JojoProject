@@ -32,6 +32,7 @@ section {
   &.feed {
     background-color: wheat;
     width: 100%;
+    min-height: 10rem;
 
     .feed-con {
       display: grid;
@@ -40,6 +41,10 @@ section {
       justify-content: center;
       width: 100%;
       padding: 20px;
+
+      @media screen and (min-width: 760px) {
+        justify-content: space-around;
+      }
     }
 
     a {
@@ -51,20 +56,27 @@ section {
 
     .card {
       background-color: white;
-      box-shadow: 0 4px 10px 1px black;
+      box-shadow: 1px 1px 4px 1px black ;
       width: 350px;
       height: 100%;
       border-radius: 10px;
+      //border: 1px solid black;
       padding: 1rem;
       text-align: center;
-      &:hover{
-        transform:scale(101%);
+      transition: all 150ms ease-in-out ;
+
+      &:hover {
+        transform: scale(101%);
+              box-shadow: 4px 4px 5px 1px black;
+
       }
-      .card-img-con{
+
+      .card-img-con {
         max-width: calc(100% - 1rem);
         height: 200px;
-        margin:5px auto;
+        margin: 5px auto;
       }
+
       h1 {
         margin-top: 5px;
         margin-bottom: 5px;
@@ -87,6 +99,59 @@ section {
 
     }
   }
+}
+
+.center-container {
+  min-width: 90%;
+  max-width: max-content;
+  margin: 0 auto !important;
+  box-shadow: #888888 0 0 .3rem inset;
+}
+
+
+.opt-icon {
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+  padding: .5rem;
+}
+
+.opt-icon:hover {
+  cursor: pointer;
+  color: green;
+}
+
+.option {
+  position: absolute;
+  right: .5rem;
+  top: 2rem;
+  padding: .5rem;
+  color: white;
+  flex-direction: column;
+  gap: .5rem;
+  box-shadow: .1rem .1rem .2rem black;
+}
+
+.option button {
+  background-color: darkred;
+  color: oldlace;
+  border: none;
+  padding: .4rem;
+  cursor: pointer;
+  transition: box-shadow 200ms ease-in-out;
+}
+
+.option button:hover {
+  box-shadow: .07rem .07rem .14rem black;
+}
+
+.card {
+  position: relative;
+}
+
+
+#edit-post{
+    background-color: cadetblue !important;
 }
 
 

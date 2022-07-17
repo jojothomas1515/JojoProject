@@ -1,18 +1,12 @@
 
-footer{
-  position:relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
-      background-color: darkslategrey;
+footer {
+  background-color: darkslategrey;
   padding: 1rem;
-  >div{
+
+  > div {
     display: block;
     color: whitesmoke;
     text-align: center;
-    > *{
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
+
   }
 }
