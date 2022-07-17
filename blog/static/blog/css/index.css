@@ -24,6 +24,7 @@ section.intro > div a {
 section.feed {
   background-color: wheat;
   width: 100%;
+  min-height: 10rem;
 }
 section.feed .feed-con {
   display: grid;

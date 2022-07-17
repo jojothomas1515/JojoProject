@@ -32,6 +32,7 @@ section {
   &.feed {
     background-color: wheat;
     width: 100%;
+    min-height: 10rem;
 
     .feed-con {
       display: grid;
