@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-@o7p4mm0p%#i9@@#!c6j4ww#6(u5d*c6)8b94ji4xrsosacjx4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://jojopage.urbangeek.tech', 'http://jojopage.urbangeek.tech']
+ALLOWED_HOSTS = ['https://jojopage.urbangeek.tech', 'http://jojopage.urbangeek.tech', 'jojopage.urbangeek.tech']
 
 if DEBUG:
     ALLOWED_HOSTS = [ 'localhost', '127.0.0.1','https://jojopage.urbangeek.tech', 'http://jojopage.urbangeek.tech']
