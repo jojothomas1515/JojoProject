@@ -1,3 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .bars {
   display: none;
 }
@@ -7,7 +21,7 @@
 }
 
 .navbar {
-  background-color: darkslategrey;
+  background-color: #070F2B;
   padding: 10px;
   color: white;
   z-index: 1000;
@@ -15,10 +29,9 @@
   top: 0;
 }
 .navbar h1 span {
-  padding: 5px;
-  border-radius: 10px;
+  padding: 2px;
   background-color: white;
-  color: darkslategrey;
+  color: #070F2B;
 }
 .navbar .navbar-con {
   display: flex;
@@ -33,17 +46,15 @@
 .navbar .navbar-con .btn {
   all: unset;
   padding: 5px;
-  border: 1px solid white;
   color: white;
-  border-radius: 5px;
   text-decoration: none;
-  box-shadow: 0 2px 5px -2px rgb(0, 0, 0);
   transition: all 250ms ease-in-out;
+  border-bottom: 1px solid #9290C3;
   cursor: pointer;
 }
 .navbar .navbar-con .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 2px -10px rgb(0, 0, 0);
+  box-shadow: 2px 2px #9290C3;
+  background-color: #1B1A55;
 }
 .navbar .navbar-con .btn.link-logout {
   color: red;
@@ -58,17 +69,14 @@
   .navbar .navbar-con h1 {
     text-align: center;
   }
-
   .bars {
     display: block;
   }
-
   #check:checked ~ .nav-items {
     left: 0;
     opacity: 1;
     border-radius: 0;
   }
-
   .navbar .navbar-con .nav-items {
     display: block;
     position: absolute;
@@ -77,7 +85,7 @@
     right: 0;
     height: 100vh;
     width: 100%;
-    background-color: darkslategrey;
+    background-color: #070F2B;
     opacity: 0.5;
     border-bottom-right-radius: 100rem;
     transition: all 250ms ease-in-out;
@@ -93,8 +101,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   }
   .navbar .navbar-con .nav-items .btn:hover {
-    background-color: whitesmoke;
-    color: black;
+    background-color: #1B1A55;
   }
   .navbar .navbar-con .nav-items .btn.link-logout {
     color: red;

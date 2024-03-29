@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 *,
 *::after,
 *::before {
@@ -6,22 +8,33 @@
   padding: 0;
 }
 
+$secondary_color: #1B1A55;
+$primary_color: #070F2B;
+$accent_color: #9290C3;
+$complement_color: #535C91;
+$text_color: #fff;
+
+* {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
-  background-color: gray;
+  background-color: $primary_color;
 }
 
 .login-con {
   display: block;
   position: relative;
-  margin:0 auto;
+  margin: 0 auto;
   transform: translateY(50%);
   width: 21.8rem;
   height: fit-content;
-  background-color: black;
+  background-color: $secondary_color;
   color: white;
   padding: .625rem;
-  border: 4px dashed grey;
-  border-radius: .62rem;
   font-family: "URW Gothic";
 
   h1 {
@@ -36,18 +49,19 @@ body {
     .lgbtn {
       position: relative;
       padding: .6rem .8rem;
-      margin:0 auto;
-      border: 1px solid dodgerblue;
-      border-radius: .68rem;
+      margin: 0 auto;
+      border: 1px solid white;
       background-color: transparent;
-      color: dodgerblue;
+      color: white;
       top: 50%;
       transform: translateY(-50%);
+      transition: background-color, box-shadow 100ms ease-in-out;
 
       &:hover {
-        color: black;
-        background-color: dodgerblue;
-        border-color: black;
+        color: $text_color;
+        background-color: $accent_color;
+        border-color: $complement_color;
+        box-shadow: 3px 3px 0px $complement_color;
       }
     }
 
@@ -61,14 +75,12 @@ body {
       }
 
       label {
-        text-align: center;
         margin-top: 10px;
         margin-bottom: 10px;
       }
 
       input[type='text'], input[type='password'] {
-        border: 2px solid grey;
-        border-radius: 10px;
+        border: 1px solid $complement_color;
         padding-inline: 10px;
         height: 30px;
         width: 100%;
@@ -80,6 +92,7 @@ body {
       }
 
     }
+
   }
 }
 

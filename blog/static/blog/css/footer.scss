@@ -1,6 +1,6 @@
-
+@import "base";
 footer {
-  background-color: darkslategrey;
+  background-color: $primary_color;
   padding: 1rem;
 
   > div {
